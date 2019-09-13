@@ -1,10 +1,12 @@
 import React from 'react';
 
 import SEO from '../../components/SEO';
+import Navigation from '../../components/Navigation';
 
 const Home = () => (
   <SEO description="site muito bom">
-    <h1>Home page</h1>
+    <Navigation />
+    <h1>Home</h1>
   </SEO>
 );
 
