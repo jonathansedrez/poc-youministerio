@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "web-you",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "Site to show you ministerio portifolio",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Jonathan Sedrez",
   "dependencies": {
     "gatsby": "^2.15.14",
     "gatsby-image": "^2.2.18",
@@ -21,23 +21,18 @@
   "devDependencies": {
     "prettier": "^1.18.2"
   },
-  "keywords": [
-    "gatsby"
-  ],
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
-    "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing \""
+    "serve": "yarn build && gatsby serve"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
-  },
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+  "prettier": {
+    "trailingComma": "es5",
+    "singleQuote": true,
+    "endOfLine": "lf",
+    "tabWidth": 2
   }
 }
