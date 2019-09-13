@@ -15,7 +15,9 @@ const Image = () => {
     }
   `);
 
-  return <Img fluid={data.bird.childImageSharp.fluid} />;
+  return (
+    <Img fluid={data.bird.childImageSharp.fluid} src="Beija flor voando" />
+  );
 };
 
 export default Image;

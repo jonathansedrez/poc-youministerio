@@ -6,7 +6,9 @@ function SEO({ description, meta, title, children }) {
   return (
     <Fragment>
       <Helmet>
-        <title>{title ? `${title} | You Ministério` : `You Ministério`}</title>
+        <title lang="pt-br">
+          {title ? `${title} | You Ministério` : `You Ministério`}
+        </title>
       </Helmet>
       <main>{children}</main>
     </Fragment>
