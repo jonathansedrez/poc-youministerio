@@ -2,13 +2,12 @@ import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
 
-function SEO({ description, meta, title, children }) {
+function SEO({ meta, title, children }) {
   return (
     <Fragment>
-      <Helmet>
-        <title lang="pt-br">
-          {title ? `${title} | You Ministério` : `You Ministério`}
-        </title>
+      <Helmet meta={meta}>
+        <title>{title ? `${title} | You Ministério` : `You Ministério`}</title>
+        <html lang="pt-br" />
       </Helmet>
       <main>{children}</main>
     </Fragment>
@@ -17,7 +16,6 @@ function SEO({ description, meta, title, children }) {
 
 SEO.propTypes = {
   title: PropTypes.string,
-  description: PropTypes.string.isRequired,
   meta: PropTypes.arrayOf(PropTypes.object),
   children: PropTypes.node.isRequired,
 };
