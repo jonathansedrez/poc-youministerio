@@ -1,6 +1,8 @@
 import React, { Fragment } from 'react';
-import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
+import PropTypes from 'prop-types';
+
+import metaImage from '../../images/meta-image.jpg';
 
 function SEO({ meta, title, children }) {
   return (
@@ -8,6 +10,7 @@ function SEO({ meta, title, children }) {
       <Helmet meta={meta}>
         <title>{title ? `${title} | You Ministério` : `You Ministério`}</title>
         <html lang="pt-br" />
+        <meta property="og:image" content={metaImage} />
       </Helmet>
       <main>{children}</main>
     </Fragment>

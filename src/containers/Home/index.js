@@ -3,7 +3,6 @@ import React from 'react';
 import SEO from '../../components/SEO';
 import Navigation from '../../components/Navigation';
 import Image from '../../components/Image';
-import metaImage from './meta-image.jpg';
 
 const meta = [
   {
@@ -18,10 +17,6 @@ const meta = [
   {
     property: `og:description`,
     content: 'You Ministerio | Seu lugar é aqui',
-  },
-  {
-    property: `og:image`,
-    content: metaImage,
   },
   {
     property: `og:type`,
