@@ -3,7 +3,7 @@ import React from 'react';
 import SEO from '../../components/SEO';
 import Navigation from '../../components/Navigation';
 import Image from '../../components/Image';
-import metaImage from '../../images/meta-image.jpg';
+import metaImage from './meta-image.jpg';
 
 const meta = [
   {
