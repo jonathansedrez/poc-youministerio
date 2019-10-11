@@ -2,10 +2,6 @@ import React from 'react';
 
 import Home from '../containers/Home';
 
-const HomePage = () => (
-  // <html lang="pt-br">
-  <Home />
-  // </html>
-);
+const HomePage = () => <Home />;
 
 export default HomePage;

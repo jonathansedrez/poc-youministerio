@@ -8,9 +8,8 @@ function SEO({ meta, title, children }) {
   return (
     <Fragment>
       <Helmet meta={meta}>
-        <title>{title ? `${title} | You Ministério` : `You Ministério`}</title>
+        <title>{title ? `${title} | You Ministério` : 'You Ministério'}</title>
         <html lang="pt-br" />
-        <meta property="og:image" content={metaImage} />
       </Helmet>
       <main>{children}</main>
     </Fragment>
