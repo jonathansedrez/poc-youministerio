@@ -17,7 +17,7 @@ function SEO({ meta, title, children }) {
 
   return (
     <Fragment>
-      <Helmet meta={[...defaultMetaTags, ...meta]}>
+      <Helmet meta={meta ? [...defaultMetaTags, ...meta] : defaultMetaTags}>
         <title>{title ? `${title} | You Ministério` : 'You Ministério'}</title>
         <html lang="pt-br" />
       </Helmet>
