@@ -1,16 +1,27 @@
 import React, { Fragment } from 'react';
 import { Helmet } from 'react-helmet';
+import GlobalStyle from '../../styles/globalStyles';
 import PropTypes from 'prop-types';
 
-import metaImage from '../../images/meta-image.jpg';
-
 function SEO({ meta, title, children }) {
+  const defaultMetaTags = [
+    {
+      property: 'og:type',
+      content: 'website',
+    },
+    {
+      property: 'robots',
+      content: 'index, follow',
+    },
+  ];
+
   return (
     <Fragment>
-      <Helmet meta={meta}>
+      <Helmet meta={[...defaultMetaTags, ...meta]}>
         <title>{title ? `${title} | You Ministério` : 'You Ministério'}</title>
         <html lang="pt-br" />
       </Helmet>
+      <GlobalStyle />
       <main>{children}</main>
     </Fragment>
   );
@@ -18,7 +29,7 @@ function SEO({ meta, title, children }) {
 
 SEO.propTypes = {
   title: PropTypes.string,
-  meta: PropTypes.arrayOf(PropTypes.object),
+  meta: PropTypes.arrayOf(PropTypes.object).isRequired,
   children: PropTypes.node.isRequired,
 };
 
