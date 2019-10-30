@@ -2,7 +2,6 @@ import React, { Fragment } from 'react';
 import { Helmet } from 'react-helmet';
 import GlobalStyle from '../../styles/globalStyles';
 import PropTypes from 'prop-types';
-import TestImage from '../../images/meta-image.jpg';
 
 function SEO({ meta, title, children }) {
   const defaultMetaTags = [
@@ -20,7 +19,6 @@ function SEO({ meta, title, children }) {
     <Fragment>
       <Helmet meta={meta ? [...defaultMetaTags, ...meta] : defaultMetaTags}>
         <title>{title ? `${title} | You Ministério` : 'You Ministério'}</title>
-        <meta property="og:image" content={TestImage} />
         <html lang="pt-br" />
       </Helmet>
       <GlobalStyle />
