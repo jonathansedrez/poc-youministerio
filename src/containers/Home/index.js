@@ -4,7 +4,6 @@ import SEO from '../../components/SEO';
 import Navigation from '../../components/Navigation';
 import Image from '../../components/Image';
 import Map from '../../components/Map';
-import TestImage from '../../images/meta-image.jpg';
 
 import { Wrapper, Title, Paragraph } from './styles';
 
@@ -25,7 +24,7 @@ const meta = [
   },
   {
     property: `og:image`,
-    content: TestImage,
+    content: '../../images/meta-image.jpg',
   },
 ];
 
