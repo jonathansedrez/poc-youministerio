@@ -22,10 +22,6 @@ const meta = [
     content:
       'Pois foi Deus quem nos fez o que somos agora; em nossa união com Cristo Jesus, ele nos criou para que fizéssemos as boas obras que ele já havia preparado para nós. Efésios 2:10',
   },
-  {
-    property: `og:image`,
-    content: '../../images/meta-image.jpg',
-  },
 ];
 
 const Home = () => (
@@ -35,7 +31,7 @@ const Home = () => (
     <Wrapper>
       <Paragraph>Gotham Rounded</Paragraph>
       <Paragraph>
-        Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum{' '}
+        Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
       </Paragraph>
     </Wrapper>
     <Map />

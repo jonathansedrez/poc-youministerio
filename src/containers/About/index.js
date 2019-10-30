@@ -19,7 +19,7 @@ const meta = [
 ];
 
 const About = () => (
-  <SEO title="Sobre" description="site muito bom">
+  <SEO title="Sobre" meta={meta}>
     <Navigation />
     <h1>Sobre</h1>
   </SEO>
