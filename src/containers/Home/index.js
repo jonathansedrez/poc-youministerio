@@ -25,7 +25,7 @@ const meta = [
   },
   {
     property: `og:image`,
-    content: { TestImage },
+    content: `https://qa-you-ministerio.netlify.com/${TestImage}`,
   },
 ];
 
