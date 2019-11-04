@@ -20,7 +20,7 @@ module.exports = {
         background_color: `#e3dcc8`,
         theme_color: `#e3dcc8`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`,
+        icon: `src/images/you.png`,
       },
     },
     {
