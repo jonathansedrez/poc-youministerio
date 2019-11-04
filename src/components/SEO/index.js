@@ -1,15 +1,28 @@
 import React, { Fragment } from 'react';
-import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
+import GlobalStyle from '../../styles/globalStyles';
+import PropTypes from 'prop-types';
+import Image from '../../images/meta-image.jpg';
 
-function SEO({ description, meta, title, children }) {
+function SEO({ meta, title, children }) {
+  const defaultMetaTags = [
+    {
+      property: 'og:type',
+      content: 'website',
+    },
+    {
+      property: 'robots',
+      content: 'index, follow',
+    },
+  ];
+
   return (
     <Fragment>
-      <Helmet>
-        <title lang="pt-br">
-          {title ? `${title} | You Ministério` : `You Ministério`}
-        </title>
+      <Helmet meta={meta ? [...defaultMetaTags, ...meta] : defaultMetaTags}>
+        <title>{title ? `${title} | You Ministério` : 'You Ministério'}</title>
+        <html lang="pt-br" />
       </Helmet>
+      <GlobalStyle />
       <main>{children}</main>
     </Fragment>
   );
@@ -17,8 +30,7 @@ function SEO({ description, meta, title, children }) {
 
 SEO.propTypes = {
   title: PropTypes.string,
-  description: PropTypes.string.isRequired,
-  meta: PropTypes.arrayOf(PropTypes.object),
+  meta: PropTypes.arrayOf(PropTypes.object).isRequired,
   children: PropTypes.node.isRequired,
 };
 
