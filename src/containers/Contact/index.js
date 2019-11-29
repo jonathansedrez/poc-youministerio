@@ -1,10 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import useForm from 'react-hook-form';
 
 import { baptismForm } from '../../api';
 import SEO from '../../components/SEO';
 import Navigation from '../../components/Navigation';
-import { Form, Input, ButtonSubmit, ErrorMessage } from './styles';
+import Map from '../../components/Map';
+import {
+  Form,
+  Input,
+  ButtonSubmit,
+  ErrorMessage,
+  Wrapper,
+  Title,
+  Error,
+  Success,
+} from './styles';
 
 const meta = [
   {
@@ -24,49 +34,64 @@ const meta = [
 const Contact = () => {
   const { register, handleSubmit, errors } = useForm();
 
+  const [hasError, setError] = useState(false);
+  const [hasSuccess, setSuccess] = useState(false);
+
   const onSubmit = async fields => {
-    console.log(fields);
-    const { data } = await baptismForm(fields);
-    console.log(data);
+    try {
+      await baptismForm(fields);
+      console.log('enviado');
+      setSuccess(true);
+    } catch (error) {
+      setError(true);
+    }
   };
 
   return (
     <SEO title="Contato" meta={meta}>
+      {hasError && <Error>Houve um erro ao enviar formulário!</Error>}
+      {hasSuccess && <Success>Enviado com sucesso!</Success>}
       <Navigation />
-      <Form onSubmit={handleSubmit(onSubmit)}>
-        <Input
-          type="text"
-          placeholder="Nome"
-          name="name"
-          error={errors.name}
-          ref={register({
-            required: { value: true, message: 'Campo obrigatório' },
-          })}
-        />
-        {errors.name && (
-          <ErrorMessage>
-            {errors.name.type === 'required' && 'Campo obrigatório'}
-            {errors.name.type === 'maxLength' && 'Your input exceed maxLength'}}
-          </ErrorMessage>
-        )}
-        <Input
-          type="text"
-          placeholder="Mensagem"
-          name="message"
-          error={errors.message}
-          ref={register({ required: true, maxLength: 255 })}
-        />
-        {errors.message && (
-          <ErrorMessage>
-            {errors.message.type === 'required' && 'Your input is required'}
-            {errors.message.type === 'maxLength' &&
-              'Sua mensagem excdeu o valor'}
-            }
-          </ErrorMessage>
-        )}
-
-        <ButtonSubmit type="submit">Enviar</ButtonSubmit>
-      </Form>
+      <Map />
+      <Wrapper>
+        <Title>Fale conosco!</Title>
+        <Form onSubmit={handleSubmit(onSubmit)}>
+          <Input
+            type="text"
+            placeholder="Nome"
+            name="name"
+            error={errors.name}
+            ref={register({
+              required: { value: true, message: 'Campo obrigatório' },
+            })}
+          />
+          {errors.name && (
+            <ErrorMessage>
+              {errors.name.type === 'required' && 'Campo obrigatório'}
+              {errors.name.type === 'maxLength' &&
+                'Your input exceed maxLength'}
+              }
+            </ErrorMessage>
+          )}
+          <Input
+            type="text"
+            placeholder="Mensagem"
+            name="message"
+            error={errors.message}
+            message
+            ref={register({ required: true, maxLength: 255 })}
+          />
+          {errors.message && (
+            <ErrorMessage>
+              {errors.message.type === 'required' && 'Your input is required'}
+              {errors.message.type === 'maxLength' &&
+                'Sua mensagem excdeu o valor'}
+              }
+            </ErrorMessage>
+          )}
+          <ButtonSubmit type="submit">Enviar</ButtonSubmit>
+        </Form>
+      </Wrapper>
     </SEO>
   );
 };

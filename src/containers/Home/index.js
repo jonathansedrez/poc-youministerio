@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 
 import SEO from '../../components/SEO';
 import Navigation from '../../components/Navigation';
-import Map from '../../components/Map';
 import metaImage from '../../images/meta-image.jpg';
 import Image from '../../components/Image';
 import graph from '../../images/1.svg';
