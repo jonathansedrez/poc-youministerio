@@ -49,9 +49,9 @@ const Contact = () => {
 
   return (
     <SEO title="Contato" meta={meta}>
+      <Navigation />
       {hasError && <Error>Houve um erro ao enviar formulário!</Error>}
       {hasSuccess && <Success>Enviado com sucesso!</Success>}
-      <Navigation />
       <Map />
       <Wrapper>
         <Title>Fale conosco!</Title>
@@ -83,7 +83,7 @@ const Contact = () => {
           />
           {errors.message && (
             <ErrorMessage>
-              {errors.message.type === 'required' && 'Your input is required'}
+              {errors.message.type === 'required' && 'Campo obrigatório'}
               {errors.message.type === 'maxLength' &&
                 'Sua mensagem excdeu o valor'}
               }

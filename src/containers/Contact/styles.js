@@ -15,6 +15,12 @@ export const Error = styled.span`
   height: 48px;
   background: ${colors.errorColor};
   color: ${colors.white};
+  position: absolute;
+  top: 48px;
+  z-index: 999;
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
 `;
 
 export const Success = styled.span`
@@ -22,6 +28,12 @@ export const Success = styled.span`
   height: 48px;
   background: 'green';
   color: ${colors.white};
+  position: absolute;
+  top: 48px;
+  z-index: 999;
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
 `;
 
 export const Form = styled.form`
