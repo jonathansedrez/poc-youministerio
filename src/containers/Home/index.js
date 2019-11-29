@@ -2,11 +2,26 @@ import React, { useEffect } from 'react';
 
 import SEO from '../../components/SEO';
 import Navigation from '../../components/Navigation';
-import Image from '../../components/Image';
 import Map from '../../components/Map';
 import metaImage from '../../images/meta-image.jpg';
+import Image from '../../components/Image';
+import graph from '../../images/1.svg';
+import web from '../../images/2.svg';
+import mobile from '../../images/3.svg';
 
-import { Wrapper, Title, Paragraph } from './styles';
+import {
+  Wrapper,
+  InnerWrapper,
+  Title,
+  SubTitle,
+  Img,
+  Presentation,
+  InnerPresentation,
+  H5,
+  H4,
+  Box,
+  Paragraph,
+} from './styles';
 
 const meta = [
   {
@@ -37,15 +52,48 @@ const Home = () => {
   return (
     <SEO meta={meta}>
       <Navigation />
-      <Title>Gotham Rounded</Title>
       <Wrapper>
-        <Paragraph>Gotham Rounded</Paragraph>
-        <Paragraph>
-          Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
-        </Paragraph>
+        <Img>
+          <Image />
+        </Img>
+        <InnerWrapper>
+          <Title>Seu lugar é aqui!</Title>
+          <SubTitle>You Ministerio</SubTitle>
+        </InnerWrapper>
       </Wrapper>
-      <Map />
-      <Image />
+      <Presentation>
+        <H5>SERVICE PROVIDED</H5>
+        <Title secondary>
+          Build brands campaigns <br />& digital projects
+        </Title>
+        <InnerPresentation>
+          <Box>
+            <img src={graph} />
+            <H4>Graphic design</H4>
+            <Paragraph>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do
+              eiusmod tempor.
+            </Paragraph>
+          </Box>
+          <Box>
+            <img src={mobile} />
+            <H4>Mobile app</H4>
+            <Paragraph>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do
+              eiusmod tempor.
+            </Paragraph>
+          </Box>
+          <Box>
+            <img src={web} />
+            <H4>Web design</H4>
+            <Paragraph>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do
+              eiusmod tempor.
+            </Paragraph>
+          </Box>
+        </InnerPresentation>
+      </Presentation>
+      {/* <Map /> */}
     </SEO>
   );
 };

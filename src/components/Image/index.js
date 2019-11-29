@@ -16,7 +16,11 @@ const Image = () => {
   `);
 
   return (
-    <Img fluid={data.bird.childImageSharp.fluid} src="Beija flor voando" />
+    <Img
+      fluid={data.bird.childImageSharp.fluid}
+      style={{ position: 'initial' }}
+      src="Beija flor voando"
+    />
   );
 };
 

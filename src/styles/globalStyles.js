@@ -5,6 +5,7 @@ const GlobalStyle = createGlobalStyle`
   html {    
     box-sizing: border-box;
     font-size: 16px;
+    font-family: 'Muli', sans-serif;
   }
 
   *, *:before, *:after {
@@ -14,7 +15,13 @@ const GlobalStyle = createGlobalStyle`
   body, h1, h2, h3, h4, h5, h6, p, ol, ul {
     margin: 0;
     padding: 0;
+    font-family: 'Muli', sans-serif;
   }
+
+  a {
+  color: inherit;
+  text-decoration: inherit;
+}
 
   ol, ul {
     list-style: none;

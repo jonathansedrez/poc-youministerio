@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import color from '../../styles/variables';
+import { colors } from '../../styles/variables';
 
 export const Form = styled.form`
   padding: 8px 16px;
@@ -19,13 +19,13 @@ export const Input = styled.input`
 export const ErrorMessage = styled.span`
   width: 200px;
   font-size: 8px;
-  color: ${color.errorColor};
+  color: ${colors.errorColor};
 `;
 
 export const ButtonSubmit = styled.button`
   width: 200px;
   height: 48px;
   border: none;
-  background-color: ${color.errorColor};
+  background-color: ${colors.errorColor};
   color: white;
 `;

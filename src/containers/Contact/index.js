@@ -45,7 +45,7 @@ const Contact = () => {
         />
         {errors.name && (
           <ErrorMessage>
-            {errors.name.type === 'required' && 'Your input is required'}
+            {errors.name.type === 'required' && 'Campo obrigatório'}
             {errors.name.type === 'maxLength' && 'Your input exceed maxLength'}}
           </ErrorMessage>
         )}
@@ -54,32 +54,16 @@ const Contact = () => {
           placeholder="Mensagem"
           name="message"
           error={errors.message}
-          ref={register({ required: true, maxLength: 100 })}
+          ref={register({ required: true, maxLength: 255 })}
         />
         {errors.message && (
           <ErrorMessage>
             {errors.message.type === 'required' && 'Your input is required'}
             {errors.message.type === 'maxLength' &&
-              'Your input exceed maxLength'}
+              'Sua mensagem excdeu o valor'}
             }
           </ErrorMessage>
         )}
-        {/* <Input
-          type="text"
-          placeholder="Email"
-          name="email"
-          error={errors.email}
-          ref={register({
-            required: true,
-            pattern: /^\S+@\S+$/i,
-          })}
-        />
-        {errors.email && (
-          <ErrorMessage>
-            {errors.email.type === 'required' && 'Your input is required'}
-            {errors.email.type === 'pattern' && 'Email invalido'}}
-          </ErrorMessage>
-        )} */}
 
         <ButtonSubmit type="submit">Enviar</ButtonSubmit>
       </Form>
